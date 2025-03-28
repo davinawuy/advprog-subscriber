@@ -95,3 +95,17 @@ We can use something like RwLock<Vec<Notification>> to allow for multiple thread
 The reason why we can't directly mutate static variables is because within Java static variables can be easily modified using static methods, the langauge does not enforce thread-safety rules. As for the circumstances within Rust, the thread safety is prioritized especially for data access by multithreads. Though, Rust doesn't allow mutable access to static variables by default. The reason for this is due to the possibility of data types or unpredictable behaviour. In addition, Rust requires Mutex, Rwlock, or Dashmap to operate safely. The lazy_static crate helps define and initialize complex static values and this can help with ensuring that shared data is safely accessible across threads. Rust has the benefit of emphasizing memory safety and concurrency guarantees.
 
 #### Reflection Subscriber-2
+
+1. Have you explored things outside of the steps in the tutorial, for example: src/lib.rs? If not, explain why you did not do so. If yes, explain things that you have learned from those other parts of code.
+
+Yes, I have explored around the project since I did mess up a few times. I checked lib.rs and it helped me learn a bit more about the project structure for rust. I also checked that the lib.rs supported stuff like modularity. The use of moduels in Rust was super interesting since it is similar to other coding languages. I also check the cargo.toml and it contains all the dependencies nad its versions which is why I should be careful not to push it by accident. I also observed the structure of Rust and how to apply clean code through this structure.
+
+2. Since you have completed the tutorial by now and have tried to test your notification system by spawning multiple instances of Receiver, explain how Observer pattern eases you to plug in more subscribers. How about spawning more than one instance of Main app, will it still be easy enough to add to the system?
+
+The observer pattern made it very easy to plug in additional reciever instances or subscribers instances. without altering the core logic in notification and they should be integrated instantly. It is also very scalable since it encompasses many items and considerations. The drawback that there are some challenges for multiple app instances and shared state management.
+
+3. Have you tried to make your own Tests, or enhance documentation on your Postman collection? If you have tried those features, tell us whether it is useful for your work (it can be your tutorial work or your Group Project).
+
+I have not implemented tests outside the postman one given. I did annotate more on my Postman collection and it useful to help me understand what is being covered in that particular area or test. It will be helpful to teach my group members about what is being covered by the test.
+
+
